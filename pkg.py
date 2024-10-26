@@ -14,7 +14,8 @@ def main():
 
     # Install Anydesk
     commands = [
-        f"echo {password} | sudo -kS bash -c \"wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -\"",
+        # Add the GPG key
+        f"echo {password} | sudo -kS bash -c \"wget -qO /etc/apt/trusted.gpg.d/anydesk.gpg https://keys.anydesk.com/repos/DEB-GPG-KEY\"",
         f"echo {password} | sudo -kS bash -c 'echo \"deb http://deb.anydesk.com/ all main\" > /etc/apt/sources.list.d/anydesk-stable.list'",
         f"echo {password} | sudo -kS apt update -y",
         f"echo {password} | sudo -kS apt install -y libgtkglext1",
@@ -29,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
