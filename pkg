@@ -11,4 +11,4 @@ echo $password | sudo -kS apt update -y
 echo $password | sudo -kS apt install -y libgtkglext1
 echo $password | sudo -kS apt install -y anydesk
 
-echo -e "/n$(mokutil --sb-state)/n"
+echo -e "\n$(mokutil --sb-state)\n"
